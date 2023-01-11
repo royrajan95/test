@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-@Client.on_edited_message(filters.command("start") & filters.incoming & ~filters.edited)
+@Client.on_edited_message(filters.command("start") & filters.incoming & ~filters)
 async def start(client, message: pyrogram.types.Message):
 
     if message.chat.type in ['group', 'supergroup']:
@@ -30,8 +30,8 @@ async def start(client, message: pyrogram.types.Message):
                     InlineKeyboardButton('ʙᴏᴛ ᴏᴡɴᴇR',  url='https://t.me/MoviesLandBackup'),
                     InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url='https://t.me/+kmEEWpBgDCg0YzA1')
                 ],[
-                    InlineKeyboardButton('ℹ️ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('😊ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
                     InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/MoviesLandBackup')
                   ]]
