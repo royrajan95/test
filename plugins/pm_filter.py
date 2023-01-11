@@ -66,7 +66,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"📂 [{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}#{query.from_user.id}'
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}#{query.from_user.id}'
                 )
             ] 
             for file in files
@@ -87,13 +87,13 @@ async def next_page(bot, query):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/movieslandfilterv4_bot?startgroup=true')
+            InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/movieslandfilterv4_bot?startgroup=true')
         ]
     )
     btn.insert(1,
         [ 
-            InlineKeyboardButton(f'♻️INVITE♻️', url=f'https://api.whatsapp.com/send?text=കാണാൻ%20ആഗ്രഹമുള്ള%20ഏതു%20സിനിമയും%20ഏതു%20നേരത്തും%20ചോദിക്കാം%20-%20https://t.me/movieslandbackup/'),
-            InlineKeyboardButton('💥ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ💥', url='https://t.me/MoviesLandBackup')
+            InlineKeyboardButton(f'INVITE', url=f'https://api.whatsapp.com/send?text=കാണാൻ%20ആഗ്രഹമുള്ള%20ഏതു%20സിനിമയും%20ഏതു%20നേരത്തും%20ചോദിക്കാം%20-%20https://t.me/movieslandfamily/'),
+            InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/MoviesLandBackup')
         ]
     )
 
@@ -105,20 +105,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pages {round(int(offset) / 10) + 1} / {round(total / 10)}",
+            [InlineKeyboardButton("BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"Pages {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("NEXT", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("BACK", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("NEXT", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -425,7 +425,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n <i><b>{title}</b></i>\n\n<i><b>⚠️ <i>⚠️  കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 5 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!</i>\n\n<i><b> ഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!!</i>\n\n<i><b><a href="https://t.me/MoviesLandBackup">♻️Join US</a> | <a href="https://api.whatsapp.com/send?text=കാണാൻ%20ആഗ്രഹമുള്ള%20ഏതു%20സിനിമയും%20ഏതു%20നേരത്തും%20ചോദിക്കാം%20-%20https://t.me/movieslandbackup/">♻INVITE♻️</a></b></i>',
+                caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n <i><b>{title}</b></i>\n\n<i><b>⚠️ <i>⚠️  കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 5 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!</i>\n\n<i><b> ഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!!</i>\n\n<i><b><a href="https://t.me/MoviesLandFamily">♻️Join US</a> | <a href="https://api.whatsapp.com/send?text=കാണാൻ%20ആഗ്രഹമുള്ള%20ഏതു%20സിനിമയും%20ഏതു%20നേരത്തും%20ചോദിക്കാം%20-%20https://t.me/movieslandfamily/">♻INVITE♻️</a></b></i>',
                 protect_content=True if ident == "filep" else False 
             )
             msg1 = await query.message.reply(
@@ -437,10 +437,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton('📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ', url = msg.link)
+                            InlineKeyboardButton('𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄', url = msg.link)
                         ],                       
                         [
-                            InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/+BYVdlMWQb7g1YWVl')
+                            InlineKeyboardButton("𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌?? 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾", url=f'https://t.me/+BYVdlMWQb7g1YWVl')
                         ]
                     ]
                 )
@@ -496,15 +496,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/movieslandfilterv4_bot?startgroup=true')
+                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/movieslandfilterv4_bot?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴',  url='https://t.me/MoviesLandBackup'),
-                    InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/+kmEEWpBgDCg0YzA1')
+                    InlineKeyboardButton('ʙᴏᴛ ᴏᴡɴᴇʀ',  url='https://t.me/MoviesLandBackup'),
+                    InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url='https://t.me/+kmEEWpBgDCg0YzA1')
                 ],[
-                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/MoviesLandBackup')
+                    InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/MoviesLandBackup')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.delete()
@@ -535,7 +535,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇', callback_data='coct')
             ],[
             InlineKeyboardButton('𝖡𝖺𝗇𝗌', callback_data='ban'),
-            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
             InlineKeyboardButton('𝖲𝗍𝖺𝗍𝗎𝗌', callback_data='stats')
             ],[
             InlineKeyboardButton('𝖩𝗌𝗈𝗇', callback_data='json'),
@@ -555,7 +555,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+                        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                     ],
                     [
                         InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
@@ -888,8 +888,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('Back', callback_data='help'),
+            InlineKeyboardButton('Refresh', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -907,8 +907,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('Back', callback_data='help'),
+            InlineKeyboardButton('Refresh', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -1019,7 +1019,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                        text=f"📂 [{get_size(file.file_size)}] {file.file_name}", 
+                        text=f"[{get_size(file.file_size)}] {file.file_name}", 
                         callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
                 )
             ] 
@@ -1042,14 +1042,13 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'♨️ {search} ♨️ ', 'dupe')
+            InlineKeyboardButton(f'{search}', 'dupe')
         ]
     )
     btn.insert(1,
         [
-            InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'dupe'),
-            InlineKeyboardButton(f'sᴇʀɪᴇs', 'dupe'),
-            InlineKeyboardButton(f'ᴛɪᴘs', 'tips')
+            InlineKeyboardButton(f'𝖥𝗂𝗅𝖾𝗌 : {total_results}', 'dupe'),
+            InlineKeyboardButton(f'𝖳𝗂𝗉𝗌', 'tips')
         ]
     )
 
@@ -1059,7 +1058,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="NEXT", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
@@ -1102,7 +1101,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hi 👋 {message.from_user.mention}</b> 😍\n\n<b>📁 Found ✨  Files For Your Query : {search} 👇</b> "
+        cap = f"<b>Hi 👋 {message.from_user.mention}</b> 😍\n\n<b>📁 Found ✨{total_results} For Your Query : {search} 👇</b> "
     if imdb and imdb.get('poster'):
         try:
             fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
